@@ -23,21 +23,23 @@ function getComputerChoice(playerSelection)
 }
 
 function playRound(playerSelection, computerSelection) {
+
+    playerSelection = playerSelection.toLowerCase();
+    computerSelection = computerSelection.toLowerCase();
+
     
-    if  ((playerSelection.toLowerCase() === rock && computerSelection === rock) ||
-    (playerSelection.toLowerCase() === paper && computerSelection === paper) ||
-    (playerSelection.toLowerCase() === scissors && computerSelection === scissors)) 
+    if  (playerSelection === computerSelection) 
     {
         console.log("It's a tie");
-    } else if ((playerSelection.toLowerCase() === paper && computerSelection === rock) ||
-               (playerSelection.toLowerCase() === scissors && computerSelection === paper) ||
-               (playerSelection.toLowerCase() === rock && computerSelection === scissors)) {
+    } else if ((playerSelection === paper && computerSelection === rock) ||
+               (playerSelection === scissors && computerSelection === paper) ||
+               (playerSelection === rock && computerSelection === scissors)) {
         playerCount++;
         console.log(`Your Points: ${playerCount}`);
         console.log("You win this round");
-    } else if ((playerSelection.toLowerCase() === paper && computerSelection === scissors) ||
-    (playerSelection.toLowerCase() === scissors && computerSelection === rock) ||
-    (playerSelection.toLowerCase() === rock && computerSelection === paper)) 
+    } else if ((playerSelection === paper && computerSelection === scissors) ||
+    (playerSelection === scissors && computerSelection === rock) ||
+    (playerSelection === rock && computerSelection === paper)) 
     {
         console.log("You lose this round");
         computerCount++;
