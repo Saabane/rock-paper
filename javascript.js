@@ -3,10 +3,8 @@
 const rock = 'rock';
 const paper = 'paper';
 const scissors = 'scissors';
-const playerSelection = prompt("Enter a word:");
-const computerSelection = getComputerChoice();
 
-function getComputerChoice() 
+function getComputerChoice(playerSelection) 
 {
     const randomNumber = Math.floor(Math.random() * 3);
 
@@ -45,5 +43,10 @@ function playRound(playerSelection, computerSelection) {
     }
 }
 
-playRound(playerSelection, computerSelection);
-//console.log(playRound(playerSelection, computerSelection));
+function playGame() {
+    const playerSelection = prompt("Enter a word:");
+    const computerSelection = getComputerChoice(playerSelection);
+    playRound(playerSelection, computerSelection);  
+}
+
+playGame();
