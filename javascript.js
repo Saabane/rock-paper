@@ -44,9 +44,11 @@ function playRound(playerSelection, computerSelection) {
 }
 
 function playGame() {
-    const playerSelection = prompt("Enter a word:");
-    const computerSelection = getComputerChoice(playerSelection);
-    playRound(playerSelection, computerSelection);  
+    for (let i = 0; i < 5; i++) {
+        const playerSelection = prompt("Enter a word:");
+        const computerSelection = getComputerChoice(playerSelection);
+        playRound(playerSelection, computerSelection);  
+    }
 }
 
 playGame();
