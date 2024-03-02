@@ -25,15 +25,15 @@ function getComputerChoice(playerSelection)
 function playRound(playerSelection, computerSelection) {
     
     if  ((playerSelection.toLowerCase() === rock && computerSelection === rock) ||
-        (playerSelection.toLowerCase() === paper && computerSelection === paper) ||
-        (playerSelection.toLowerCase() === scissors && computerSelection === scissors)) 
+    (playerSelection.toLowerCase() === paper && computerSelection === paper) ||
+    (playerSelection.toLowerCase() === scissors && computerSelection === scissors)) 
     {
         console.log("It's a tie");
     } else if ((playerSelection.toLowerCase() === paper && computerSelection === rock) ||
                (playerSelection.toLowerCase() === scissors && computerSelection === paper) ||
                (playerSelection.toLowerCase() === rock && computerSelection === scissors)) {
         playerCount++;
-        console.log(`playerPoints ${playerCount}`);
+        console.log(`Your Points: ${playerCount}`);
         console.log("You win this round");
     } else if ((playerSelection.toLowerCase() === paper && computerSelection === scissors) ||
     (playerSelection.toLowerCase() === scissors && computerSelection === rock) ||
@@ -41,7 +41,7 @@ function playRound(playerSelection, computerSelection) {
     {
         console.log("You lose this round");
         computerCount++;
-        console.log(`computerPoints ${computerCount}`);
+        console.log(`Computer Points: ${computerCount}`);
     }
     else {
         console.log("Write the text correctly please");
@@ -49,16 +49,16 @@ function playRound(playerSelection, computerSelection) {
 }
 function playGame() {
     for (let i = 0; i < 5; i++) {
-        console.log(`Round ${i+1}`);
+        console.log(`Round: ${i+1}`);
         const playerSelection = prompt("Pick Rock or Paper or Scissors:");
         const computerSelection = getComputerChoice(playerSelection);
         playRound(playerSelection, computerSelection); 
     }
     if (playerCount < computerCount) {
-        console.log(`Computer has ${computerCount} Points you lose`);
+        console.log(`Computer has ${computerCount} Points you lost`);
     }else
     {
-        console.log(`You have ${computerCount} Points you win`);
+        console.log(`You have ${playerCount} Point you win`);
     }
 }
 
