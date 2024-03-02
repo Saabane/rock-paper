@@ -4,19 +4,20 @@ const rock = 'rock';
 const paper = 'paper';
 const scissors = 'scissors';
 const playerSelection = prompt("Enter a word:");
+const computerSelection = getComputerChoice();
 
 function getComputerChoice() 
 {
     const randomNumber = Math.floor(Math.random() * 3);
 
     if (randomNumber === 0) {
-        console.log("Computer chose Rock");
+        console.log(`You used ${playerSelection} and Computer chose Rock`);
         return rock;
     } else if (randomNumber === 1) {
-        console.log("Computer chose Paper");
+        console.log(`You used ${playerSelection} and Computer chose Paper`);
         return paper;
     } else {
-        console.log("Computer chose Scissors");
+        console.log(`You used ${playerSelection} and Computer chose Scissors`);
         return scissors;
     }
 }
@@ -42,7 +43,6 @@ function playRound(playerSelection, computerSelection) {
     }else {
         return "You lose, Paper beats rock";
     }
-  }
+}
 
-const computerSelection = getComputerChoice();
 console.log(playRound(playerSelection, computerSelection));
