@@ -27,22 +27,23 @@ function playRound(playerSelection, computerSelection) {
     if ((playerSelection.toLowerCase() === rock && computerSelection === rock) ||
         (playerSelection.toLowerCase() === paper && computerSelection === paper) ||
         (playerSelection.toLowerCase() === scissors && computerSelection === scissors)) {
-        return "It's a tie";
+        console.log("It's a tie");
     } else if (playerSelection.toLowerCase() === paper && computerSelection === rock) 
     {
-        return "You win, Paper beats rock";
+        console.log("You win, Paper beats rock");
     }else if (playerSelection.toLowerCase() === scissors && computerSelection === paper) 
     {
-        return "You win, Scissors beats paper";
+        console.log("You win, Scissors beats paper");
     }else if (playerSelection.toLowerCase() === rock && computerSelection === scissors) {
-        return "You win, Rock beats scissors";
+        console.log("You win, Rock beats scissors");
     }else if (playerSelection.toLowerCase() === paper && computerSelection === scissors) {
-        return "You lose, Scissors beats paper";
+        console.log("You lose, Scissors beats paper");
     }else if (playerSelection.toLowerCase() === scissors && computerSelection === rock) {
-        return "You lose, Rock beats scissors";
+        console.log("You lose, Rock beats scissors");
     }else {
-        return "You lose, Paper beats rock";
+        console.log("You lose, Paper beats rock");
     }
 }
 
-console.log(playRound(playerSelection, computerSelection));
+playRound(playerSelection, computerSelection);
+//console.log(playRound(playerSelection, computerSelection));
