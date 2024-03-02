@@ -21,13 +21,9 @@ function getComputerChoice(playerSelection)
         return scissors;
     }
 }
-
 function playRound(playerSelection, computerSelection) {
-
     playerSelection = playerSelection.toLowerCase();
-    computerSelection = computerSelection.toLowerCase();
-
-    
+    computerSelection = computerSelection.toLowerCase();   
     if  (playerSelection === computerSelection) 
     {
         console.log("It's a tie");
@@ -56,6 +52,8 @@ function playGame() {
         const computerSelection = getComputerChoice(playerSelection);
         playRound(playerSelection, computerSelection); 
     }
+}
+function pickWinner() {
     if (playerCount < computerCount) {
         console.log(`Computer has ${computerCount} Points you lost`);
     }else
@@ -65,3 +63,4 @@ function playGame() {
 }
 
 playGame();
+pickWinner();
