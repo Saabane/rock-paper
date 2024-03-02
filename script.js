@@ -55,10 +55,10 @@ function playGame() {
 }
 function pickWinner() {
     if (playerCount < computerCount) {
-        console.log(`Computer has ${computerCount} Points you lost`);
+        console.log(`Computer has ${computerCount} Points & you have ${playerCount} you lost`);
     }else
     {
-        console.log(`You have ${playerCount} Point you win`);
+        console.log(`You have ${playerCount} Point & computer have ${computerCount} you win`);
     }
 }
 
