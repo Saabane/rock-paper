@@ -33,13 +33,15 @@ function playRound(playerSelection, computerSelection) {
                (playerSelection.toLowerCase() === scissors && computerSelection === paper) ||
                (playerSelection.toLowerCase() === rock && computerSelection === scissors)) {
         playerCount++;
-        console.log(`playerPoint ${playerCount}`);
-        console.log("You win");
+        console.log(`playerPoints ${playerCount}`);
+        console.log("You win this round");
     } else if ((playerSelection.toLowerCase() === paper && computerSelection === scissors) ||
     (playerSelection.toLowerCase() === scissors && computerSelection === rock) ||
     (playerSelection.toLowerCase() === rock && computerSelection === paper)) 
     {
-        console.log("You lose,");
+        console.log("You lose this round");
+        computerCount++;
+        console.log(`computerPoints ${computerCount}`);
     }
     else {
         console.log("Write the text correctly please");
@@ -47,10 +49,16 @@ function playRound(playerSelection, computerSelection) {
 }
 function playGame() {
     for (let i = 0; i < 5; i++) {
+        console.log(`Round ${i+1}`);
         const playerSelection = prompt("Pick Rock or Paper or Scissors:");
         const computerSelection = getComputerChoice(playerSelection);
-        console.log(i+1);
         playRound(playerSelection, computerSelection); 
+    }
+    if (playerCount < computerCount) {
+        console.log(`Computer has ${computerCount} Points you lose`);
+    }else
+    {
+        console.log(`You have ${computerCount} Points you win`);
     }
 }
 
